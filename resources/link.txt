@@ -1,0 +1,1 @@
+https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-atlas_regional-effectifs-d-etudiants-inscrits/download/?format=json&timezone=Europe/Berlin&lang=en
