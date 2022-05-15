@@ -1,0 +1,30 @@
+You're connected to database:  ('project_tle',)
+---------------TIME CALCULATION---------------
+Query number 100
+Time to select All female students who lives in Caen from students table with a number of paralel query equal to 100 : 0.0001373999984934926
+---------------TIME CALCULATION---------------
+Query number 200
+Time to select All female students who lives in Caen from students table with a number of paralel query equal to 200 : 0.00011530000483617187
+---------------TIME CALCULATION---------------
+Query number 400
+Time to select All female students who lives in Caen from students table with a number of paralel query equal to 400 : 8.830000297166407e-05
+---------------TIME CALCULATION---------------
+Query number 800
+Time to select All female students who lives in Caen from students table with a number of paralel query equal to 800 : 8.070000330917537e-05
+---------------TIME CALCULATION---------------
+Query number 1600
+Time to select All female students who lives in Caen from students table with a number of paralel query equal to 1600 : 0.0001157999795395881
+---------------TIME CALCULATION---------------
+Query number 3200
+Time to select All female students who lives in Caen from students table with a number of paralel query equal to 3200 : 0.00013679999392479658
+---------------TIME CALCULATION---------------
+Query number 6400
+Time to select All female students who lives in Caen from students table with a number of paralel query equal to 6400 : 0.00011929997708648443
+---------------TIME CALCULATION---------------
+Query number 12800
+Time to select All female students who lives in Caen from students table with a number of paralel query equal to 12800 : 0.00014819999341852963
+---------------TIME CALCULATION---------------
+Query number 25600
+Time to select All female students who lives in Caen from students table with a number of paralel query equal to 25600 : 0.0002057999954558909
+----------------------------------------------
+MySQL connection is closed

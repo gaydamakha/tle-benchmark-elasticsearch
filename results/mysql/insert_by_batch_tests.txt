@@ -1,0 +1,30 @@
+You're connected to database:  ('project_tle',)
+---------------TIME CALCULATION---------------
+Batch size 100
+Time to insert 371195 row into students table with a batch size equal to 100 : 24.27319649999845
+---------------TIME CALCULATION---------------
+Batch size 200
+Time to insert 371195 row into students table with a batch size equal to 200 : 22.293284399987897
+---------------TIME CALCULATION---------------
+Batch size 400
+Time to insert 371195 row into students table with a batch size equal to 400 : 20.731130900006974
+---------------TIME CALCULATION---------------
+Batch size 800
+Time to insert 371195 row into students table with a batch size equal to 800 : 19.92365609999979
+---------------TIME CALCULATION---------------
+Batch size 1600
+Time to insert 371195 row into students table with a batch size equal to 1600 : 20.24294870000449
+---------------TIME CALCULATION---------------
+Batch size 3200
+Time to insert 371195 row into students table with a batch size equal to 3200 : 20.052418900013436
+---------------TIME CALCULATION---------------
+Batch size 6400
+Time to insert 371195 row into students table with a batch size equal to 6400 : 19.902329300006386
+---------------TIME CALCULATION---------------
+Batch size 12800
+Time to insert 371195 row into students table with a batch size equal to 12800 : 19.922145700023975
+---------------TIME CALCULATION---------------
+Batch size 25600
+Time to insert 371195 row into students table with a batch size equal to 25600 : 19.983293299999787
+----------------------------------------------
+MySQL connection is closed
