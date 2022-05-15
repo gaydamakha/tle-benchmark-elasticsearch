@@ -6,3 +6,4 @@ python-dotenv
 ijson
 mysql-connector-python
 pandas
+matplotlib
