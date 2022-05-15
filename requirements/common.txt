@@ -2,3 +2,5 @@ docopt
 requests
 elasticsearch
 mysqlclient
+python-dotenv
+ijson
