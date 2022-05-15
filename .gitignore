@@ -2,3 +2,4 @@
 /.vscode
 resources/data/
 /.env
+*.pyc
