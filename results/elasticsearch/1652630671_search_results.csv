@@ -1,4 +1,4 @@
-batch_size,time_(ms)
+batch_size,time(ms)
 100,15
 200,29
 400,59

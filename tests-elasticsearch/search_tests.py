@@ -11,15 +11,16 @@ Options:
 
 from datetime import datetime
 import json
+import os
 from docopt import docopt
 from elasticsearch import Elasticsearch
-from consts import INDEX_NAME
+from consts import INDEX_NAME, ROOT_DIR
 from common import get_connection
 
 
 def search_benchmark(conn: Elasticsearch, batch_sizes: list):
     index = f"{INDEX_NAME}_100"
-    with open(str(int(datetime.now().replace(microsecond=0).timestamp())) + '_search_results.csv', 'w') as f:
+    with open(os.path.join(ROOT_DIR, 'results/elasticsearch', str(int(datetime.now().replace(microsecond=0).timestamp())) + '_search_results.csv'), 'w') as f:
         for size in batch_sizes:
             if not conn.indices.exists(index=index):
                 print(f"index {index} does not exist")
