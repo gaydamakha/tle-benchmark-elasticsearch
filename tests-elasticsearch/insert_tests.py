@@ -14,6 +14,7 @@ import os
 from datetime import datetime
 from docopt import docopt
 from elasticsearch import Elasticsearch
+from elasticsearch.helpers import bulk, BulkIndexError
 from dotenv import load_dotenv
 from consts import INDEX_NAME, ROOT_DIR
 
@@ -24,14 +25,21 @@ es = Elasticsearch(os.environ.get('ELASTICSEARCH_HOST'), basic_auth=(
 
 
 def create_index(name: str):
-    if not es.indices.exists(index=INDEX_NAME):
-        es.indices.create(index=INDEX_NAME)
+    if not es.indices.exists(index=name):
+        es.indices.create(index=name, mappings={
+            "properties": {
+                "annee_universitaire": {
+                    "type": "keyword"
+                }
+            }
+        })
 
 
-def insert_benchmark(bulk_sizes: list):
-    # create_index()
-    for size in bulk_sizes:
-        print(f"Bunch size {size}")
+def insert_benchmark(batch_sizes: list):
+    for size in batch_sizes:
+        index = f"{INDEX_NAME}_{size}"
+        create_index(index)
+        print(f"Batch size {size}")
         total = 0
         batch_count = 0
         count = 0
@@ -42,31 +50,36 @@ def insert_benchmark(bulk_sizes: list):
                     total += count
                     batch_count += 1
                     print(f"Inserting batch #{batch_count}")
-                    # TODO: insert to elasticsearch and measure
+                    bulk_index(docs, index=index)
                     docs = []
                     count = 0
-                docs.append(doc)
+                docs.append({
+                    "_op_type": "index",
+                    "_id": doc["recordid"],
+                    "_source": doc["fields"],
+                })
                 count += 1
-
             if len(docs) > 0:
                 batch_count += 1
                 print(f"Inserting batch #{batch_count}")
-                # TODO: insert to elasticsearch and measure
+                bulk_index(docs, index=index)
                 total += len(docs)
                 docs = []
             print(f"Total {total}")
 
 
+def bulk_index(docs: list, index: str):
+    try:
+        bulk(es, actions=docs, index=index)
+    except BulkIndexError as e:
+        for error in e.errors:
+            print(error['index']['error']['reason'])
+
+
 if __name__ == '__main__':
     arguments = docopt(__doc__, version='0.1')
-    a = 100
+    a = 200
     length = 9
     r = 2
-    bulk_sizes = [a * r ** (n - 1) for n in range(1, length + 1)]
-    insert_benchmark(bulk_sizes=bulk_sizes)
-
-# Inserting batch 370195
-# 370195000
-
-# Inserting batch 371095
-# 37109500
+    batch_sizes = [a * r ** (n - 1) for n in range(1, length + 1)]
+    insert_benchmark(batch_sizes=batch_sizes)
