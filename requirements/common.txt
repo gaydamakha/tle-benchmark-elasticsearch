@@ -2,3 +2,5 @@ docopt
 requests
 elasticsearch
 mysqlclient
+mysql-connector-python
+pandas
