@@ -2,8 +2,7 @@
 
 ## Groupe
 
-Projet réalisé en trinôme :
+Projet réalisé en binôme :
 
 - Mikhail GAYDAMAKHA
-- Hejer BOUZOUITA
 - Walid MORSLI
