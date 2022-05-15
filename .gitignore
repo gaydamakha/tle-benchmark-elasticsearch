@@ -1,5 +1,9 @@
+*.py[cod]
+*$py.class
 .pylint.log
 /.vscode
 resources/data/
 /.env
 *.pyc
+/mysql/fr-esr-atlas_regional-effectifs-d-etudiants-inscrits.csv
+__pycache__/
