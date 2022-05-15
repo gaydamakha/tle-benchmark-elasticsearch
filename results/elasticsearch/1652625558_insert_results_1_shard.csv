@@ -1,3 +1,4 @@
+index_{batch_size},operation, total_tome, operation_per_second
 tle-students_100,3712,28278,131.26812362967678
 tle-students_200,1856,27896,66.53283624892457
 tle-students_400,928,27562,33.6695450257601
