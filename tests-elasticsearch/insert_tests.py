@@ -12,7 +12,6 @@ Options:
 import ijson
 from docopt import docopt
 from elasticsearch import Elasticsearch
-from dotenv import load_dotenv
 from consts import INDEX_NAME, ROOT_DIR
 from common import get_connection, create_index, bulk_index
 
